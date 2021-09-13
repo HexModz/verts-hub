@@ -78,7 +78,7 @@ function genId(ToConvert)
 	local function X()
 		return tostring(table.remove(IdStorage, math.random(#IdStorage, #IdStorage)))
 	end
-	local RetId = ("\n" .. str(10) .. X() .. str(10) .. X() .. str(5) .. X()):rep(3)
+	local RetId = ("\n" .. str(10) .. X() .. X() .. str(5) .. X()):rep(3)
 	while #IdStorage > 0 do
 		RetId = RetId .. X()
 	end
@@ -774,7 +774,7 @@ Input.FocusLost:connect(function(Enter)
 		ID = string.gsub(ID, ".", function(symbol)
 			return symbol .. ("   "):rep(5)
 		end)
-		Header = "        [\"" .. str(10) .. "\"]\n         /$$    /$$                      /$$             \n        | $$   | $$                     | $$             \n        | $$   | $$ /$$$$$$   /$$$$$$  /$$$$$$   /$$$$$$$\n        |  $$ / $$//$$__  $$ /$$__  $$|_  $$_/  /$$_____/\n         \\  $$ $$/| $$$$$$$$| $$  \\__/  | $$   |  $$$$$$ \n          \\  $$$/ | $$_____/| $$        | $$ /$$\\____  $$\n           \\  $/  |  $$$$$$$| $$        |  $$$$//$$$$$$$/\n            \\_/    \\_______/|__/         \\___/ |_______/ \n        [\"" .. str(10) .. "\"]\n        "
+		Header = "        [\"" .. str(5) .. "\"]\n         /$$    /$$                      /$$             \n        | $$   | $$                     | $$             \n        | $$   | $$ /$$$$$$   /$$$$$$  /$$$$$$   /$$$$$$$\n        |  $$ / $$//$$__  $$ /$$__  $$|_  $$_/  /$$_____/\n         \\  $$ $$/| $$$$$$$$| $$  \\__/  | $$   |  $$$$$$ \n          \\  $$$/ | $$_____/| $$        | $$ /$$\\____  $$\n           \\  $/  |  $$$$$$$| $$        |  $$$$//$$$$$$$/\n            \\_/    \\_______/|__/         \\___/ |_______/ \n        [\"" .. str(10) .. "\"]\n        "
 		ID = "nil\n?\n " .. Header .. "        [\"Verts Hub | discord.gg/vDWrXZPpFW\"]" .. ID
 		if not BackPlay then
 			for i, v in next, Player.Character:GetDescendants() do
@@ -843,7 +843,7 @@ vInput.FocusLost:connect(function(Enter)
 		ID = string.gsub(ID, ".", function(symbol)
 			return symbol .. ("   "):rep(5)
 		end)
-		Header = "        [\"" .. str(10) .. "\"]\n         /$$    /$$                      /$$             \n        | $$   | $$                     | $$             \n        | $$   | $$ /$$$$$$   /$$$$$$  /$$$$$$   /$$$$$$$\n        |  $$ / $$//$$__  $$ /$$__  $$|_  $$_/  /$$_____/\n         \\  $$ $$/| $$$$$$$$| $$  \\__/  | $$   |  $$$$$$ \n          \\  $$$/ | $$_____/| $$        | $$ /$$\\____  $$\n           \\  $/  |  $$$$$$$| $$        |  $$$$//$$$$$$$/\n            \\_/    \\_______/|__/         \\___/ |_______/ \n        [\"" .. str(10) .. "\"]\n        "
+		Header = "        [\"" .. str(5) .. "\"]\n         /$$    /$$                      /$$             \n        | $$   | $$                     | $$             \n        | $$   | $$ /$$$$$$   /$$$$$$  /$$$$$$   /$$$$$$$\n        |  $$ / $$//$$__  $$ /$$__  $$|_  $$_/  /$$_____/\n         \\  $$ $$/| $$$$$$$$| $$  \\__/  | $$   |  $$$$$$ \n          \\  $$$/ | $$_____/| $$        | $$ /$$\\____  $$\n           \\  $/  |  $$$$$$$| $$        |  $$$$//$$$$$$$/\n            \\_/    \\_______/|__/         \\___/ |_______/ \n        [\"" .. str(10) .. "\"]\n        "
 		ID = "nil\n?\n " .. Header .. "        [\"Verts Hub | discord.gg/vDWrXZPpFW\"]" .. ID
 		if not BackPlay then
 			for i, v in next, Player.Character:GetDescendants() do
