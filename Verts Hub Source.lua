@@ -8,25 +8,6 @@ end
 local UI = game:GetObjects("rbxassetid://7468123464")[1]
 UI.Parent = game:GetService("CoreGui")
 local Prefix
-if not isfolder("Verts-Hub") then
-	makefolder("Verts-Hub")
-end
-if not isfile("Verts-Hub/Whitelist.vh") then
-	writefile("Verts-Hub/Whitelist.vh", "{\"VHID\":\"\",\"HWID\":\"\"}")
-end
-if not isfolder("Verts-Hub/Presets") then
-	makefolder("Verts-Hub/Presets")
-end
-if not isfolder("Verts-Hub/Theme") then
-	makefolder("Verts-Hub/Theme")
-end
-if not isfolder("Verts-Hub/Assets") then
-	makefolder("Verts-Hub/Assets")
-end
-if not isfolder("Verts-Hub/Assets/Changes.config") then
-	writefile("Verts-Hub/Assets/Changes.config", "{}")
-end
-local List = listfiles("Verts-Hub/Presets")
 local file
 if not isfolder("Verts-Hub") then
 	makefolder("Verts-Hub")
@@ -34,6 +15,7 @@ end
 if not isfolder("Verts-Hub/Presets") then
 	makefolder("Verts-Hub/Presets")
 end
+local List = listfiles("Verts-Hub/Presets")
 if not isfolder("Verts-Hub/Theme") then
 	makefolder("Verts-Hub/Theme")
 end
