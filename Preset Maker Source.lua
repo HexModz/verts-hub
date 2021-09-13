@@ -1,4 +1,4 @@
-local UI = game:GetObjects("rbxassetid://7470816843&version=6")[1]
+local UI = game:GetObjects("rbxassetid://7470816843")[1]
 UI.Parent = game["CoreGui"]
 local TweenService = game:GetService("TweenService")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Enviie/New-Verts-Hub-Crack/main/Encrypt.lua"))()
