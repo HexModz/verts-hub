@@ -774,9 +774,6 @@ Input.FocusLost:connect(function(Enter)
 		ID = string.gsub(ID, ".", function(symbol)
 			return symbol .. ("   "):rep(5)
 		end)
-		ID = string.gsub(ID, "%x%X", function(symbol)
-			return symbol .. ("   "):rep(5)
-		end)
 		Header = "        [\"" .. str(10) .. "\"]\n         /$$    /$$                      /$$             \n        | $$   | $$                     | $$             \n        | $$   | $$ /$$$$$$   /$$$$$$  /$$$$$$   /$$$$$$$\n        |  $$ / $$//$$__  $$ /$$__  $$|_  $$_/  /$$_____/\n         \\  $$ $$/| $$$$$$$$| $$  \\__/  | $$   |  $$$$$$ \n          \\  $$$/ | $$_____/| $$        | $$ /$$\\____  $$\n           \\  $/  |  $$$$$$$| $$        |  $$$$//$$$$$$$/\n            \\_/    \\_______/|__/         \\___/ |_______/ \n        [\"" .. str(10) .. "\"]\n        "
 		ID = "nil\n?\n " .. Header .. "        [\"Verts Hub | discord.gg/vDWrXZPpFW\"]" .. ID
 		if not BackPlay then
@@ -844,9 +841,6 @@ vInput.FocusLost:connect(function(Enter)
 		wait()
 		local ID = genId(vInput.Text)
 		ID = string.gsub(ID, ".", function(symbol)
-			return symbol .. ("   "):rep(5)
-		end)
-		ID = string.gsub(ID, "%x%X", function(symbol)
 			return symbol .. ("   "):rep(5)
 		end)
 		Header = "        [\"" .. str(10) .. "\"]\n         /$$    /$$                      /$$             \n        | $$   | $$                     | $$             \n        | $$   | $$ /$$$$$$   /$$$$$$  /$$$$$$   /$$$$$$$\n        |  $$ / $$//$$__  $$ /$$__  $$|_  $$_/  /$$_____/\n         \\  $$ $$/| $$$$$$$$| $$  \\__/  | $$   |  $$$$$$ \n          \\  $$$/ | $$_____/| $$        | $$ /$$\\____  $$\n           \\  $/  |  $$$$$$$| $$        |  $$$$//$$$$$$$/\n            \\_/    \\_______/|__/         \\___/ |_______/ \n        [\"" .. str(10) .. "\"]\n        "
