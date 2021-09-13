@@ -8,36 +8,52 @@ end
 local UI = game:GetObjects("rbxassetid://7468123464")[1]
 UI.Parent = game:GetService("CoreGui")
 local Prefix
-if isfolder and makefolder and isfile and writefile then
-	local List = listfiles("Verts-Hub/Presets")
-	local file
-	if not isfolder("Verts-Hub") then
-		makefolder("Verts-Hub")
-	end
-	if not isfolder("Verts-Hub/Presets") then
-		makefolder("Verts-Hub/Presets")
-	end
-	if not isfolder("Verts-Hub/Theme") then
-		makefolder("Verts-Hub/Theme")
-	end
-	if not isfolder("Verts-Hub/Assets") then
-		makefolder("Verts-Hub/Assets")
-	end
-	if not isfile("Verts-Hub/Assets/Changes.config") then
-		writefile("Verts-Hub/Assets/Changes.config", "{}")
-	end
-	if isfile("config.vh") then
-		file = readfile("config.vh")
-		Prefix = JSONDecode(file)["Prefix"]
-	else
-		writefile("config.vh", JSONEncode({
-			["Prefix"] = "!"
-		}))
-		file = readfile("config.vh")
-	end
-	if not isfile("Verts-Hub/Presets/Defauult.preset") then
-		writefile("Verts-Hub/Presets/Default.preset", "for i, v in next, tools do\n    coroutine.wrap(\n        function()\n            local BP, BG, F = v.POSV.Value, v.GYROV.Value\n            local a, vol = 1, 0\n            while vis do\n                vol = tools[#tools].Handle.Sound.PlaybackLoudness / sens\n                ro = math.rad(a / 2 + (i * (360 / #tools)))\n                F = CFrame.new(torso.Position) * CFrame.Angles(0, ro, 0) * CFrame.new(0, 0, vol + offset)\n                BP.Position = F.p\n                BG.CFrame = CFrame.new(BG.Parent.Position, torso.Position + Vector3.new(0,tilt+math.sin(-vol*2),0))\n                a = a + speed / 2.5\n                game:GetService(\"RunService\").Heartbeat:wait()\n                v.Handle.Velocity = Vector3.new(0, 0, 30)\n                v.Handle.AssemblyLinearVelocity = Vector3.new(30,0,0)\n            end\n        end\n    )()\nend\n    ")
-	end
+if not isfolder("Verts-Hub") then
+	makefolder("Verts-Hub")
+end
+if not isfile("Verts-Hub/Whitelist.vh") then
+	writefile("Verts-Hub/Whitelist.vh", "{\"VHID\":\"\",\"HWID\":\"\"}")
+end
+if not isfolder("Verts-Hub/Presets") then
+	makefolder("Verts-Hub/Presets")
+end
+if not isfolder("Verts-Hub/Theme") then
+	makefolder("Verts-Hub/Theme")
+end
+if not isfolder("Verts-Hub/Assets") then
+	makefolder("Verts-Hub/Assets")
+end
+if not isfolder("Verts-Hub/Assets/Changes.config") then
+	writefile("Verts-Hub/Assets/Changes.config", "{}")
+end
+local List = listfiles("Verts-Hub/Presets")
+local file
+if not isfolder("Verts-Hub") then
+	makefolder("Verts-Hub")
+end
+if not isfolder("Verts-Hub/Presets") then
+	makefolder("Verts-Hub/Presets")
+end
+if not isfolder("Verts-Hub/Theme") then
+	makefolder("Verts-Hub/Theme")
+end
+if not isfolder("Verts-Hub/Assets") then
+	makefolder("Verts-Hub/Assets")
+end
+if not isfile("Verts-Hub/Assets/Changes.config") then
+	writefile("Verts-Hub/Assets/Changes.config", "{}")
+end
+if isfile("config.vh") then
+	file = readfile("config.vh")
+	Prefix = JSONDecode(file)["Prefix"]
+else
+	writefile("config.vh", JSONEncode({
+		["Prefix"] = "!"
+	}))
+	file = readfile("config.vh")
+end
+if not isfile("Verts-Hub/Presets/Defauult.preset") then
+	writefile("Verts-Hub/Presets/Default.preset", "for i, v in next, tools do\n    coroutine.wrap(\n        function()\n            local BP, BG, F = v.POSV.Value, v.GYROV.Value\n            local a, vol = 1, 0\n            while vis do\n                vol = tools[#tools].Handle.Sound.PlaybackLoudness / sens\n                ro = math.rad(a / 2 + (i * (360 / #tools)))\n                F = CFrame.new(torso.Position) * CFrame.Angles(0, ro, 0) * CFrame.new(0, 0, vol + offset)\n                BP.Position = F.p\n                BG.CFrame = CFrame.new(BG.Parent.Position, torso.Position + Vector3.new(0,tilt+math.sin(-vol*2),0))\n                a = a + speed / 2.5\n                game:GetService(\"RunService\").Heartbeat:wait()\n                v.Handle.Velocity = Vector3.new(0, 0, 30)\n                v.Handle.AssemblyLinearVelocity = Vector3.new(30,0,0)\n            end\n        end\n    )()\nend\n    ")
 end
 local Player = game:GetService("Players").LocalPlayer
 local Char = Player.Character
