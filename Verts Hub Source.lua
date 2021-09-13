@@ -219,7 +219,7 @@ function decryptAssetId(InputId)
 		if f and Ins and not table.find(TestedCache, Ins) and not table.find(IdCache, Ins) then
 			TestedCache[#TestedCache + 1] = Ins
 			if v:match("^assetversionid=") then
-				local x = tonumber(game:HttpGet("https://cypherxenviie.xyz/version%20to%20asset.php?Id=" .. Ins))
+				local x = tonumber(game:HttpGet("" .. Ins))
 				Ins = x or Ins
 			end
 			if not table.find(IdCache, Ins) then
