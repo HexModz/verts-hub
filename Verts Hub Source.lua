@@ -1,5 +1,17 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Enviie/New-Verts-Hub-Crack/main/Encrypt.lua"))("Encrypt")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Enviie/New-Verts-Hub-Crack/main/Encrypt1.lua"))("Arabic String")
+local Request = nil
+if (syn and syn.request) then
+	Request = syn.request 
+elseif (identifyexecutor():find("ScriptWare") and http.request) then
+	Request = http.request
+elseif (KRNL_LOADED and request) then
+	Request = request
+elseif request then 
+	Request = request
+else
+	warn("Your exploit don't support Request")
+end	
 local JSONEncode, JSONDecode = function(Input)
 	return game:GetService("HttpService"):JSONEncode(Input)
 end, function(Input)
@@ -1277,7 +1289,7 @@ function startTheme()
 		Main.Split:remove()
 		function gif(url)
 			fileName = math.random(1, 999999)
-			writefile("Verts-Hub/Assets/" .. fileName .. ".webm", syn.request({
+			writefile("Verts-Hub/Assets/" .. fileName .. ".webm", Request({
 				Url = url
 			}).Body)
 			return
