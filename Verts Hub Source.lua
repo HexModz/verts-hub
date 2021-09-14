@@ -1,11 +1,13 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Enviie/New-Verts-Hub-Crack/main/Encrypt.lua"))("Encrypt")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Enviie/New-Verts-Hub-Crack/main/Encrypt1.lua"))("Arabic String")
-local Request = nil
+local Request, GetAsset = nil, nil
 if (syn and syn.request) then
 	Request = syn.request 
+	GetAsset = getsynasset
 	print("Synapse")
 elseif (identifyexecutor():find("ScriptWare") and http.request) then
 	Request = http.request
+	GetAsset = getcustomasset
 	print("Script-Ware")
 elseif (KRNL_LOADED and request) then
 	Request = request
@@ -1333,7 +1335,7 @@ function startTheme()
 				end
 			end
 			if Theme.Animated then
-				themeImage["Video"] = getsynasset("Verts-Hub/Assets/" .. fileName .. ".webm")
+				themeImage["Video"] = GetAsset("Verts-Hub/Assets/" .. fileName .. ".webm")
 				themeImage:play()
 				wait(.2)
 				delfile("Verts-Hub/Assets/" .. fileName .. ".webm")
