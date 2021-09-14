@@ -3,12 +3,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Enviie/New-Verts-Hub-
 local Request = nil
 if (syn and syn.request) then
 	Request = syn.request 
+	print("Synapse")
 elseif (identifyexecutor():find("ScriptWare") and http.request) then
 	Request = http.request
+	print("Script-Ware")
 elseif (KRNL_LOADED and request) then
 	Request = request
+	print("Krnl")
 elseif request then 
 	Request = request
+	print("Unknown Exploit")
 else
 	warn("Your exploit don't support Request")
 end	
