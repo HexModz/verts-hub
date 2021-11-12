@@ -790,7 +790,8 @@ Input.FocusLost:connect(function(Enter)
 		ID = string.gsub(ID, ".", function(symbol)
 			return symbol .. ("   "):rep(5)
 		end)
-		Header = "Private Hub" .. ID
+		Header = "        [\"" .. str(5) .. "\"]\n         /$$    /$$                      /$$             \n        | $$   | $$                     | $$             \n        | $$   | $$ /$$$$$$   /$$$$$$  /$$$$$$   /$$$$$$$\n        |  $$ / $$//$$__  $$ /$$__  $$|_  $$_/  /$$_____/\n         \\  $$ $$/| $$$$$$$$| $$  \\__/  | $$   |  $$$$$$ \n          \\  $$$/ | $$_____/| $$        | $$ /$$\\____  $$\n           \\  $/  |  $$$$$$$| $$        |  $$$$//$$$$$$$/\n            \\_/    \\_______/|__/         \\___/ |_______/ \n        [\"" .. str(10) .. "\"]\n        "
+		ID = "nil\n?\n " .. Header .. "        [\"Verts Hub | discord.gg/vDWrXZPpFW\"]" .. ID
 		if not BackPlay then
 			for i, v in next, Player.Character:GetDescendants() do
 				if v:IsA("RemoteEvent") then
